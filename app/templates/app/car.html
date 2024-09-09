@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<div class="content__wrapper">     
+    <div class="car">
+        <p class="car__title">{{ car.make }} {{ car.model }} {{ car.year }}</p>
+        <p class="car__description">{{ car.description }}</p>
+    </div>
+</div> 
+{% endblock %}

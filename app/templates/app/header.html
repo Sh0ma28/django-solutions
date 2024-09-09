@@ -1,0 +1,14 @@
+{% load static %}
+<header class="header">
+    <div class="header__wrapper">
+        <a href="{% url 'home' %}" class="brand">Django</a>
+        <nav class="nav">
+            {% if user.is_authenticated %}
+                <p class="nav__hello">Здравствуйте, {{ user.get_username }}.</p>
+                <a href="{% url 'logout' %}" class="nav__log">Выход</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="nav__log" type="button">Вход</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <div class="content__wrapper">     
+    {% for car in cars %}
+        <div class="card" onclick="location.href=`{% url 'car' car.id %}`;">
+            <p class="card__title">{{ car.make }} {{ car.model }} {{ car.year }}</p>
+            <p class="card__description">{{ car.description }}</p>
+            <p class="card__footer">Обновлено {{ car.updated_at }}</p>
+        </div>
+    {% endfor %}
+    </div> 
+{% endblock %}
